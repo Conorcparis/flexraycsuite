@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlexXray France - CFO Financial Summary</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: white;
+            color: #333;
+            padding: 20px;
+            font-size: 12px;
+            line-height: 1.3;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #2563eb;
+            padding-bottom: 10px;
+        }
+
+        .header h1 {
+            color: #2563eb;
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .section {
+            margin-bottom: 20px;
+        }
+
+        .section h2 {
+            background: #f0f7ff;
+            color: #2563eb;
+            padding: 8px 12px;
+            font-size: 16px;
+            border-left: 4px solid #2563eb;
+            margin-bottom: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 15px;
+            font-size: 11px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 6px 8px;
+            text-align: left;
+        }
+
+        th {
+            background: #f8fafc;
+            font-weight: bold;
+            color: #374151;
+        }
+
+        .number {
+            text-align: right;
+            font-family: 'Courier New', monospace;
+        }
+
+        .total-row {
+            background: #fef3c7;
+            font-weight: bold;
+        }
+
+        .subtotal-row {
+            background: #f3f4f6;
+            font-weight: bold;
+        }
+
+        .three-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .highlight-box {
+            background: #e0f2fe;
+            border: 1px solid #0284c7;
+            padding: 12px;
+            border-radius: 6px;
+            margin: 10px 0;
+        }
+
+        .warning-box {
+            background: #fef2f2;
+            border: 1px solid #dc2626;
+            padding: 12px;
+            border-radius: 6px;
+            margin: 10px 0;
+        }
+
+        .key-metrics {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .metric-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 10px;
+            text-align: center;
+            border-radius: 6px;
+        }
+
+        .metric-value {
+            font-size: 18px;
+            font-weight: bold;
+            color: #2563eb;
+        }
+
+        .metric-label {
+            font-size: 10px;
+            color: #666;
+            margin-top: 4px;
+        }
+
+        @media print {
+            body {
+                padding: 10px;
+                font-size: 10px;
+            }
+            .section {
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="FlexXrayLogo-2018-4.png" alt="FlexXray Logo" style="height: 60px; margin-bottom: 10px;">
+        <h1>FlexXray France - CFO Financial Summary</h1>
+        <p>Detailed P&L, Cost Structure & Investment Analysis | 3-Year Projections</p>
+    </div>
+
+    <!-- Key Metrics Dashboard -->
+    <div class="section">
+        <h2>Executive Summary - Key Metrics</h2>
+        <div class="key-metrics">
+            <div class="metric-card">
+                <div class="metric-value">€1.4M</div>
+                <div class="metric-label">Total Investment Ask</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">€900K</div>
+                <div class="metric-label">Year 1 EBITDA (42%)</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">€35M</div>
+                <div class="metric-label">Year 3 Revenue Target</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">83%</div>
+                <div class="metric-label">Year 3 EBITDA Margin</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Detailed P&L -->
+    <div class="section">
+        <h2>3-Year Profit & Loss Statement (EUR '000s)</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 40%;">Revenue Streams</th>
+                    <th class="number">Year 1 (2025)</th>
+                    <th class="number">Year 2 (2026)</th>
+                    <th class="number">Year 3 (2027)</th>
+                    <th class="number">% of Y3 Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Lafayette Certificate (€800 each)</td>
+                    <td class="number">€480</td>
+                    <td class="number">€4,800</td>
+                    <td class="number">€19,200</td>
+                    <td class="number">55%</td>
+                </tr>
+                <tr>
+                    <td>Inspection Services</td>
+                    <td class="number">€1,560</td>
+                    <td class="number">€7,200</td>
+                    <td class="number">€15,300</td>
+                    <td class="number">44%</td>
+                </tr>
+                <tr>
+                    <td>Batch Rescue Services</td>
+                    <td class="number">€100</td>
+                    <td class="number">€400</td>
+                    <td class="number">€500</td>
+                    <td class="number">1%</td>
+                </tr>
+                <tr class="total-row">
+                    <td><strong>Total Revenue</strong></td>
+                    <td class="number"><strong>€2,140</strong></td>
+                    <td class="number"><strong>€12,400</strong></td>
+                    <td class="number"><strong>€35,000</strong></td>
+                    <td class="number"><strong>100%</strong></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 40%;">Operating Expenses</th>
+                    <th class="number">Year 1</th>
+                    <th class="number">Year 2</th>
+                    <th class="number">Year 3</th>
+                    <th class="number">% of Y3 Revenue</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Lafayette Certificate Development</td>
+                    <td class="number">€50</td>
+                    <td class="number">€0</td>
+                    <td class="number">€0</td>
+                    <td class="number">0%</td>
+                </tr>
+                <tr>
+                    <td>Staff Costs (incl. 45% social charges)</td>
+                    <td class="number">€435</td>
+                    <td class="number">€900</td>
+                    <td class="number">€2,000</td>
+                    <td class="number">6%</td>
+                </tr>
+                <tr>
+                    <td>Beaujolais Facility</td>
+                    <td class="number">€150</td>
+                    <td class="number">€300</td>
+                    <td class="number">€400</td>
+                    <td class="number">1%</td>
+                </tr>
+                <tr>
+                    <td>Rungis Facility (Feb 2026 launch)</td>
+                    <td class="number">€0</td>
+                    <td class="number">€450</td>
+                    <td class="number">€800</td>
+                    <td class="number">2%</td>
+                </tr>
+                <tr>
+                    <td>Sales & Marketing</td>
+                    <td class="number">€100</td>
+                    <td class="number">€300</td>
+                    <td class="number">€600</td>
+                    <td class="number">2%</td>
+                </tr>
+                <tr>
+                    <td>Operations & Other</td>
+                    <td class="number">€270</td>
+                    <td class="number">€750</td>
+                    <td class="number">€2,200</td>
+                    <td class="number">6%</td>
+                </tr>
+                <tr class="total-row">
+                    <td><strong>Total OpEx</strong></td>
+                    <td class="number"><strong>€1,005</strong></td>
+                    <td class="number"><strong>€2,700</strong></td>
+                    <td class="number"><strong>€6,000</strong></td>
+                    <td class="number"><strong>17%</strong></td>
+                </tr>
+                <tr class="total-row">
+                    <td><strong>EBITDA</strong></td>
+                    <td class="number"><strong>€1,135</strong></td>
+                    <td class="number"><strong>€9,700</strong></td>
+                    <td class="number"><strong>€29,000</strong></td>
+                    <td class="number"><strong>83%</strong></td>
+                </tr>
+                <tr class="total-row">
+                    <td><strong>EBITDA Margin</strong></td>
+                    <td class="number"><strong>53%</strong></td>
+                    <td class="number"><strong>78%</strong></td>
+                    <td class="number"><strong>83%</strong></td>
+                    <td class="number"><strong>-</strong></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- French Employment Costs -->
+    <div class="section">
+        <h2>French Employment Cost Structure</h2>
+        <div class="two-column">
+            <div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Position</th>
+                            <th class="number">Base Salary</th>
+                            <th class="number">Bonus</th>
+                            <th class="number">All-in Cost</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>General Manager</td>
+                            <td class="number">€130,000</td>
+                            <td class="number">€39,000</td>
+                            <td class="number">€185,000</td>
+                        </tr>
+                        <tr>
+                            <td>Sales Representative</td>
+                            <td class="number">€65,000</td>
+                            <td class="number">€6,500</td>
+                            <td class="number">€71,500</td>
+                        </tr>
+                        <tr>
+                            <td>Office Manager</td>
+                            <td class="number">€60,000</td>
+                            <td class="number">€3,000</td>
+                            <td class="number">€63,000</td>
+                        </tr>
+                        <tr>
+                            <td>Operations/Tech</td>
+                            <td class="number">€65,000</td>
+                            <td class="number">€0</td>
+                            <td class="number">€65,000</td>
+                        </tr>
+                        <tr>
+                            <td>Lab Support</td>
+                            <td class="number">€45,000</td>
+                            <td class="number">€0</td>
+                            <td class="number">€45,000</td>
+                        </tr>
+                        <tr class="subtotal-row">
+                            <td><strong>Total Gross Compensation</strong></td>
+                            <td class="number"><strong>€365,000</strong></td>
+                            <td class="number"><strong>€48,500</strong></td>
+                            <td class="number"><strong>€429,500</strong></td>
+                        </tr>
+                        <tr>
+                            <td>GM Expenses (car, travel, etc.)</td>
+                            <td class="number">-</td>
+                            <td class="number">-</td>
+                            <td class="number">€16,000</td>
+                        </tr>
+                        <tr>
+                            <td>French Social Charges (45%)</td>
+                            <td class="number">-</td>
+                            <td class="number">-</td>
+                            <td class="number">€186,225</td>
+                        </tr>
+                        <tr class="total-row">
+                            <td><strong>Total Employment Cost</strong></td>
+                            <td class="number">-</td>
+                            <td class="number">-</td>
+                            <td class="number"><strong>€631,725</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>French Social Charge Breakdown</th>
+                            <th class="number">Rate</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Health Insurance (Sécurité Sociale)</td>
+                            <td class="number">13.0%</td>
+                        </tr>
+                        <tr>
+                            <td>Retirement Contributions</td>
+                            <td class="number">15.5%</td>
+                        </tr>
+                        <tr>
+                            <td>Unemployment Insurance</td>
+                            <td class="number">4.05%</td>
+                        </tr>
+                        <tr>
+                            <td>Work Accident Insurance</td>
+                            <td class="number">2.5%</td>
+                        </tr>
+                        <tr>
+                            <td>Family Allowances</td>
+                            <td class="number">5.25%</td>
+                        </tr>
+                        <tr>
+                            <td>Other Charges (Transport, Training)</td>
+                            <td class="number">4.7%</td>
+                        </tr>
+                        <tr class="total-row">
+                            <td><strong>Total Employer Charges</strong></td>
+                            <td class="number"><strong>45.0%</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="highlight-box">
+                    <strong>Additional French Benefits:</strong><br>
+                    • 13th month bonus (standard practice)<br>
+                    • 25 days paid vacation + 11 public holidays<br>
+                    • Mutuelle health insurance: €150/month/person<br>
+                    • Tickets Restaurant: €9/day<br>
+                    • Transport reimbursement: 50% of public transport
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Investment Breakdown -->
+    <div class="section">
+        <h2>€1.4M Investment Allocation & Rungis Launch Costs</h2>
+        <div class="two-column">
+            <div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Investment Category</th>
+                            <th class="number">Amount (EUR)</th>
+                            <th class="number">% of Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Lafayette Certificate Development</td>
+                            <td class="number">€50,000</td>
+                            <td class="number">4%</td>
+                        </tr>
+                        <tr>
+                            <td>Working Capital & Operations</td>
+                            <td class="number">€500,000</td>
+                            <td class="number">36%</td>
+                        </tr>
+                        <tr>
+                            <td>Rungis Facility & Equipment</td>
+                            <td class="number">€650,000</td>
+                            <td class="number">46%</td>
+                        </tr>
+                        <tr>
+                            <td>Marketing & Sales Expansion</td>
+                            <td class="number">€200,000</td>
+                            <td class="number">14%</td>
+                        </tr>
+                        <tr class="total-row">
+                            <td><strong>Total Investment Ask</strong></td>
+                            <td class="number"><strong>€1,400,000</strong></td>
+                            <td class="number"><strong>100%</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Rungis Launch Cost Detail</th>
+                            <th class="number">Cost (EUR)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>X-ray Equipment (primary)</td>
+                            <td class="number">€400,000</td>
+                        </tr>
+                        <tr>
+                            <td>Additional Equipment & Setup</td>
+                            <td class="number">€95,000</td>
+                        </tr>
+                        <tr>
+                            <td>Facility Setup & Lease Deposit</td>
+                            <td class="number">€20,000</td>
+                        </tr>
+                        <tr>
+                            <td>ASN Licensing & Certifications</td>
+                            <td class="number">€12,000</td>
+                        </tr>
+                        <tr>
+                            <td>Initial Staffing (3 months)</td>
+                            <td class="number">€60,000</td>
+                        </tr>
+                        <tr>
+                            <td>IT, Marketing & Vehicle</td>
+                            <td class="number">€16,000</td>
+                        </tr>
+                        <tr>
+                            <td>Legal, Admin & Insurance</td>
+                            <td class="number">€8,000</td>
+                        </tr>
+                        <tr>
+                            <td>Contingency (15%)</td>
+                            <td class="number">€30,000</td>
+                        </tr>
+                        <tr class="total-row">
+                            <td><strong>Total Rungis Launch</strong></td>
+                            <td class="number"><strong>€641,000</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Regulatory & Compliance Costs -->
+    <div class="section">
+        <h2>French Regulatory & Compliance Costs</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 40%;">Certification/License</th>
+                    <th>Authority</th>
+                    <th class="number">Initial Cost</th>
+                    <th class="number">Annual Cost</th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>ASN X-ray Machine Approval</td>
+                    <td>Autorité de Sûreté Nucléaire</td>
+                    <td class="number">€5,000</td>
+                    <td class="number">€1,000</td>
+                    <td>Per machine + annual renewal</td>
+                </tr>
+                <tr>
+                    <td>PCR Training (Radiation Safety Officer)</td>
+                    <td>ASN Certified Training</td>
+                    <td class="number">€2,500</td>
+                    <td class="number">€500</td>
+                    <td>Every 5 years renewal</td>
+                </tr>
+                <tr>
+                    <td>Dosimetry Program</td>
+                    <td>External Lab (Mirion/APVL)</td>
+                    <td class="number">€500</td>
+                    <td class="number">€1,500</td>
+                    <td>€300-600 per badge/year</td>
+                </tr>
+                <tr>
+                    <td>Food Safety Registration</td>
+                    <td>DGAL</td>
+                    <td class="number">€750</td>
+                    <td class="number">€200</td>
+                    <td>Initial + yearly audits</td>
+                </tr>
+                <tr>
+                    <td>Worker Safety Compliance</td>
+                    <td>Inspection du Travail</td>
+                    <td class="number">€1,500</td>
+                    <td class="number">€300</td>
+                    <td>Setup + updates</td>
+                </tr>
+                <tr>
+                    <td>ISO 22000 (Optional)</td>
+                    <td>AFNOR/Bureau Veritas</td>
+                    <td class="number">€8,000</td>
+                    <td class="number">€3,000</td>
+                    <td>2-3 year cycle</td>
+                </tr>
+                <tr class="subtotal-row">
+                    <td><strong>Mandatory Compliance Total</strong></td>
+                    <td>-</td>
+                    <td class="number"><strong>€10,250</strong></td>
+                    <td class="number"><strong>€3,500</strong></td>
+                    <td>-</td>
+                </tr>
+                <tr class="total-row">
+                    <td><strong>With Optional ISO 22000</strong></td>
+                    <td>-</td>
+                    <td class="number"><strong>€18,250</strong></td>
+                    <td class="number"><strong>€6,500</strong></td>
+                    <td>Recommended for credibility</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Cash Flow & Working Capital -->
+    <div class="section">
+        <h2>Cash Flow Analysis & Working Capital Requirements</h2>
+        <div class="two-column">
+            <div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Cash Flow Item</th>
+                            <th class="number">Year 1</th>
+                            <th class="number">Year 2</th>
+                            <th class="number">Year 3</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>EBITDA</td>
+                            <td class="number">€1,135,000</td>
+                            <td class="number">€9,700,000</td>
+                            <td class="number">€29,000,000</td>
+                        </tr>
+                        <tr>
+                            <td>Working Capital Changes</td>
+                            <td class="number">(€200,000)</td>
+                            <td class="number">(€300,000)</td>
+                            <td class="number">(€500,000)</td>
+                        </tr>
+                        <tr>
+                            <td>CapEx (Equipment/Facility)</td>
+                            <td class="number">(€150,000)</td>
+                            <td class="number">(€750,000)</td>
+                            <td class="number">(€200,000)</td>
+                        </tr>
+                        <tr>
+                            <td>Tax (25% corporate rate)</td>
+                            <td class="number">(€246,250)</td>
+                            <td class="number">(€2,162,500)</td>
+                            <td class="number">(€7,075,000)</td>
+                        </tr>
+                        <tr class="total-row">
+                            <td><strong>Free Cash Flow</strong></td>
+                            <td class="number"><strong>€538,750</strong></td>
+                            <td class="number"><strong>€6,487,500</strong></td>
+                            <td class="number"><strong>€21,225,000</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div>
+                <div class="highlight-box">
+                    <strong>Working Capital Assumptions:</strong><br>
+                    • Days Sales Outstanding: 30 days<br>
+                    • Days Payable Outstanding: 45 days<br>
+                    • Inventory: Minimal (service business)<br>
+                    • Cash conversion cycle: ~15 days<br><br>
+                    <strong>Key Cash Flow Drivers:</strong><br>
+                    • Lafayette Certificate: Paid upfront<br>
+                    • Inspection services: 30-day terms<br>
+                    • Batch rescue: Immediate payment<br>
+                    • Strong cash generation from Year 1
+                </div>
+                <div class="warning-box">
+                    <strong>CFO Risk Considerations:</strong><br>
+                    • Vincent Jaud relationship dependency<br>
+                    • Rungis facility lease commitment<br>
+                    • ASN regulatory approval timeline<br>
+                    • French employment law complexities<br>
+                    • Currency exposure on US parent reporting
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Potential Grants & Incentives -->
+    <div class="section">
+        <h2>Potential French Grants & Incentives (Not Guaranteed)</h2>
+        <div class="warning-box">
+            <strong>Important:</strong> The following grants and incentives are potential opportunities only and are NOT included in the financial projections above. Actual receipt depends on eligibility, application success, and availability of funds.
+        </div>
+        
+        <div class="two-column">
+            <div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Employment & Social Charge Relief</th>
+                            <th class="number">Potential Value</th>
+                            <th>Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>URSSAF Reduction (ACRE)</td>
+                            <td class="number">€15-25K</td>
+                            <td>50% social charge reduction first year for new businesses</td>
+                        </tr>
+                        <tr>
+                            <td>Regional Employment Grants</td>
+                            <td class="number">€5-15K</td>
+                            <td>€5-10K per job created (varies by region)</td>
+                        </tr>
+                        <tr>
+                            <td>Aide à l'Embauche PME</td>
+                            <td class="number">€2-4K</td>
+                            <td>€1K per hire for SMEs (if program continues)</td>
+                        </tr>
+                        <tr>
+                            <td>Formation Professionnelle</td>
+                            <td class="number">€3-8K</td>
+                            <td>Training grants for specialized skills (ASN, food safety)</td>
+                        </tr>
+                        <tr class="subtotal-row">
+                            <td><strong>Total Employment Relief Potential</strong></td>
+                            <td class="number"><strong>€25-52K</strong></td>
+                            <td>Year 1 only</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Investment & Innovation Grants</th>
+                            <th class="number">Potential Value</th>
+                            <th>Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>BPI France Innovation Loan</td>
+                            <td class="number">€200-500K</td>
+                            <td>Low-interest loans for innovative companies</td>
+                        </tr>
+                        <tr>
+                            <td>Regional Innovation Grants</td>
+                            <td class="number">€20-100K</td>
+                            <td>Technology/equipment grants (varies by region)</td>
+                        </tr>
+                        <tr>
+                            <td>France 2030 Program</td>
+                            <td class="number">€50-200K</td>
+                            <td>Food tech/safety innovation focus</td>
+                        </tr>
+                        <tr>
+                            <td>EU Horizon Europe</td>
+                            <td class="number">€100-300K</td>
+                            <td>Cross-border food safety innovation projects</td>
+                        </tr>
+                        <tr>
+                            <td>Export Development Grants</td>
+                            <td class="number">€10-30K</td>
+                            <td>Support for international expansion</td>
+                        </tr>
+                        <tr class="subtotal-row">
+                            <td><strong>Total Investment Potential</strong></td>
+                            <td class="number"><strong>€380-1,130K</strong></td>
+                            <td>Mix of grants and low-interest loans</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="three-column">
+            <div>
+                <div class="highlight-box">
+                    <strong>URSSAF Relief Strategy:</strong><br>
+                    • ACRE: 50% social charge reduction Year 1<br>
+                    • Potential €15-25K savings on €465K staff costs<br>
+                    • Must apply within 45 days of business registration<br>
+                    • Available for new business creation
+                </div>
+            </div>
+            <div>
+                <div class="highlight-box">
+                    <strong>BPI France Opportunities:</strong><br>
+                    • Innovation loans at 1-3% interest<br>
+                    • 7-year terms with 2-year grace period<br>
+                    • Focus on food safety technology<br>
+                    • Strong application given X-ray innovation
+                </div>
+            </div>
+            <div>
+                <div class="highlight-box">
+                    <strong>Regional Specifics:</strong><br>
+                    • Beaujolais region: Manufacturing incentives<br>
+                    • Île-de-France (Rungis): Innovation focus<br>
+                    • Employment zones: Additional benefits<br>
+                    • Must research specific departmental programs
+                </div>
+            </div>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 25%;">Application Priority</th>
+                    <th style="width: 25%;">Timeline</th>
+                    <th style="width: 25%;">Success Probability</th>
+                    <th style="width: 25%;">Potential Impact</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>High Priority</strong></td>
+                    <td>Q1 2025</td>
+                    <td>70-80%</td>
+                    <td>€15-40K Year 1 savings</td>
+                </tr>
+                <tr>
+                    <td>URSSAF ACRE, Regional Employment</td>
+                    <td>Apply immediately upon incorporation</td>
+                    <td>Good - meets criteria</td>
+                    <td>Direct cost reduction</td>
+                </tr>
+                <tr class="subtotal-row">
+                    <td><strong>Medium Priority</strong></td>
+                    <td>Q2-Q3 2025</td>
+                    <td>40-60%</td>
+                    <td>€100-300K potential</td>
+                </tr>
+                <tr>
+                    <td>BPI Innovation, France 2030</td>
+                    <td>6-12 month application process</td>
+                    <td>Competitive but strong case</td>
+                    <td>Equipment/facility funding</td>
+                </tr>
+                <tr class="subtotal-row">
+                    <td><strong>Lower Priority</strong></td>
+                    <td>2026 onwards</td>
+                    <td>20-40%</td>
+                    <td>€200-500K potential</td>
+                </tr>
+                <tr>
+                    <td>EU Horizon, Export grants</td>
+                    <td>Long application cycles</td>
+                    <td>Highly competitive</td>
+                    <td>R&D and expansion funding</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="warning-box">
+            <strong>Grant Strategy Recommendations:</strong><br>
+            1. <strong>Immediate (Q1 2025):</strong> Apply for URSSAF ACRE relief and regional employment grants upon incorporation<br>
+            2. <strong>Short-term (Q2 2025):</strong> Submit BPI France innovation loan application highlighting food safety technology<br>
+            3. <strong>Medium-term (Q3-Q4 2025):</strong> Explore France 2030 program alignment with Lafayette Certificate innovation<br>
+            4. <strong>Conservative Approach:</strong> Do not include any grant funding in base case financial projections - treat as upside potential only<br>
+            5. <strong>Resource Allocation:</strong> Budget €10-15K for grant application consulting and administrative costs
+        </div>
+    </div>
+    <div class="section">
+        <h2>Unit Economics & Break-even Analysis</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 30%;">Service</th>
+                    <th class="number">Price Point</th>
+                    <th class="number">Direct Costs</th>
+                    <th class="number">Gross Margin</th>
+                    <th class="number">Monthly Break-even Volume</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Lafayette Certificate</td>
+                    <td class="number">€800</td>
+                    <td class="number">€80</td>
+                    <td class="number">90%</td>
+                    <td class="number">84 certificates</td>
+                </tr>
+                <tr>
+                    <td>Standard Inspection</td>
+                    <td class="number">€2,500</td>
+                    <td class="number">€500</td>
+                    <td class="number">80%</td>
+                    <td class="number">30 inspections</td>
+                </tr>
+                <tr>
+                    <td>Premium Inspection</td>
+                    <td class="number">€5,000</td>
+                    <td class="number">€800</td>
+                    <td class="number">84%</td>
+                    <td class="number">14 inspections</td>
+                </tr>
+                <tr>
+                    <td>Emergency Batch Rescue</td>
+                    <td class="number">€8,000</td>
+                    <td class="number">€1,200</td>
+                    <td class="number">85%</td>
+                    <td class="number">9 rescues</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="highlight-box">
+            <strong>Break-even Summary:</strong> Monthly fixed costs ~€60K require approximately 75 Lafayette Certificates OR 25 inspections OR 8 emergency rescues to achieve break-even. Current pipeline of €347K represents 6+ months of break-even volume already identified.
+        </div>
+    </div>
+</body>
+</html>

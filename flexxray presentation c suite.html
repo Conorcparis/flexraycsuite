@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlexXray Europe - Market Entry Strategy</title>
+    <style>
+        :root {
+            --primary-blue: #2563eb;
+            --accent-gold: #f59e0b;
+            --success-green: #10b981;
+            --danger-red: #ef4444;
+            --gray-light: #f3f4f6;
+            --white: #ffffff;
+            --background-blue: #60a5fa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--background-blue) 0%, var(--primary-blue) 100%);
+            color: var(--white);
+            overflow-x: hidden;
+        }
+
+        .presentation-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            min-height: 100vh;
+        }
+
+        .slide {
+            min-height: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 1.5rem 1rem;
+            position: relative;
+            page-break-after: always;
+        }
+
+        .slide-number {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .slide h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-align: center;
+            background: linear-gradient(45deg, var(--white), var(--accent-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .slide h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.2rem;
+            text-align: center;
+            color: var(--accent-gold);
+        }
+
+        .slide h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.7rem;
+            color: var(--accent-gold);
+        }
+
+        .subtitle {
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        .three-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2rem;
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        .metric-card {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .metric-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-label {
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        .bullet-list {
+            list-style: none;
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+
+        .bullet-list li {
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .bullet-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--success-green);
+            font-weight: bold;
+            font-size: 1.4rem;
+        }
+
+        .timeline {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 1000px;
+            margin: 2rem 0;
+        }
+
+        .timeline-item {
+            flex: 1;
+            text-align: center;
+            padding: 1rem;
+            position: relative;
+        }
+
+        .timeline-item:not(:last-child):after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: -1rem;
+            width: 2rem;
+            height: 2px;
+            background: var(--accent-gold);
+        }
+
+        .timeline-number {
+            background: var(--accent-gold);
+            color: var(--primary-blue);
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin: 0 auto 1rem;
+        }
+
+        .highlight-box {
+            background: rgba(255,255,255,0.12);
+            color: var(--primary-blue);
+            padding: 2rem;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1.3rem;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .risk-item {
+            background: rgba(239, 68, 68, 0.1);
+            border-left: 4px solid var(--danger-red);
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .opportunity-item {
+            background: rgba(16, 185, 129, 0.1);
+            border-left: 4px solid var(--success-green);
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .financials-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .financials-table th,
+        .financials-table td {
+            padding: 1rem;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .financials-table th {
+            background: rgba(255, 255, 255, 0.2);
+            font-weight: 600;
+        }
+
+        .competitive-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 1rem;
+            width: 100%;
+            margin: 2rem 0;
+        }
+
+        .competitive-cell {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .competitive-header {
+            background: var(--accent-gold);
+            color: var(--primary-blue);
+            font-weight: 600;
+        }
+
+        .check-mark {
+            color: var(--success-green);
+            font-size: 1.5rem;
+        }
+
+        .x-mark {
+            color: var(--danger-red);
+            font-size: 1.5rem;
+        }
+
+        .cta-button {
+            background: var(--accent-gold);
+            color: var(--primary-blue);
+            padding: 1.5rem 3rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.3rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+        }
+
+        .nav-buttons {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .nav-btn {
+            padding: 10px 15px;
+            background: var(--accent-gold);
+            color: var(--primary-blue);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .nav-btn:hover {
+            background: #f97316;
+        }
+
+        .nav-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
+        .highlight-box,
+        .highlight-box * {
+            color: #fff !important;
+        }
+
+        /* PRINT-ONLY STYLES */
+        @media print {
+          @page {
+            size: A4 landscape;
+            margin: 20mm;
+          }
+          body {
+            background: #fff !important;
+            color: #222 !important;
+            font-size: 11pt !important;
+            margin: 0;
+          }
+          .slide, .card, .section {
+            box-shadow: none !important;
+            border: none !important;
+            background: #fff !important;
+            color: #222 !important;
+            page-break-after: always;
+          }
+          .no-print, .nav-buttons, .cta-button {
+            display: none !important;
+          }
+          img {
+            max-width: 100% !important;
+            height: auto !important;
+            filter: none !important;
+            box-shadow: none !important;
+          }
+        }
+
+        @media (max-width: 768px) {
+            .slide h1 {
+                font-size: 2.5rem;
+            }
+            
+            .slide h2 {
+                font-size: 2rem;
+            }
+            
+            .two-column,
+            .three-column {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline {
+                flex-direction: column;
+            }
+            
+            .timeline-item:not(:last-child):after {
+                display: none;
+            }
+
+            .competitive-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="presentation-container">
+        <img src="FlexXrayLogo-2018-4.png" alt="FlexXray Logo"
+             style="height:70px; display:block; margin: 40px auto 10px auto; filter: drop-shadow(0 2px 12px #fff8);">
+        <!-- Slide 1: Title -->
+        <section class="slide">
+            <div class="slide-number">1/12</div>
+            <h1>FlexXray Europe</h1>
+            <p class="subtitle">Market Domination Through Strategic Gatekeeper Positioning</p>
+            <div class="highlight-box">
+                Infrastructure Complete: Advanced CRM with €347K pipeline, Lafayette Certificate™ system, and 20 qualified leads ready for June 2025 launch
+            </div>
+            <p style="margin-top: 2rem; font-size: 1.1rem; opacity: 0.8;">
+                Transforming European Food Safety Through Mandatory Retail Requirements
+            </p>
+        </section>
+
+        <!-- Slide 2: Problem -->
+        <section class="slide">
+            <div class="slide-number">2/12</div>
+            <h2>The $9.87B Market Opportunity</h2>
+            <div class="two-column">
+                <div>
+                    <h3>European Food Safety Crisis</h3>
+                    <ul class="bullet-list">
+                        <li>23 million foodborne illness cases annually in EU</li>
+                        <li>5,146 foodborne outbreaks in 2023 (EFSA data)</li>
+                        <li>Campylobacteriosis & Salmonellosis increasing</li>
+                        <li>75% French consumers concerned about food safety</li>
+                        <li>EU regulation requires detecting <7mm foreign materials</li>
+                    </ul>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">$9.87B</div>
+                    <div class="metric-label">EU Food Safety Testing Market 2030<br>6.57% CAGR growth</div>
+                    <br>
+                    <div class="metric-value">$2.5B</div>
+                    <div class="metric-label">Global Foreign Body Detection 2033<br>9.5% CAGR (faster growth)</div>
+                    <br>
+                    <div class="metric-value">€10M</div>
+                    <div class="metric-label">Average recall cost per incident</div>
+                </div>
+            </div>
+            <div class="highlight-box">
+                Critical Gap: Foreign body detection growing 9.5% CAGR vs 6.57% overall food safety market - confirming specialized X-ray inspection is the highest-growth, highest-need segment
+            </div>
+        </section>
+
+        <!-- Slide 3: Solution -->
+        <section class="slide">
+            <div class="slide-number">3/12</div>
+            <h2>Proprietary X-Ray Solution</h2>
+            <div class="two-column">
+                <div>
+                    <h3>Technology Superiority</h3>
+                    <ul class="bullet-list">
+                        <li>99.9% contamination detection rate</li>
+                        <li>Real-time processing capability</li>
+                        <li>Lafayette Certificate™ for exports</li>
+                        <li>Patented AI inspection algorithms</li>
+                        <li>Supply chain integration platform</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Market Differentiation</h3>
+                    <ul class="bullet-list">
+                        <li>Only pre-clearance certification</li>
+                        <li>90% faster border processing</li>
+                        <li>Blockchain verification system</li>
+                        <li>10+ years US market leadership</li>
+                        <li>Zero false positive track record</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="highlight-box">
+                Go-to-Market Systems Operational: Enterprise CRM deployed with full pipeline management, Lafayette Certificate™ processing center, and comprehensive sales analytics platform
+            </div>
+        </section>
+
+        <!-- Slide 4: Market Size (TAM/SAM/SOM) -->
+        <section class="slide">
+            <div class="slide-number">4/12</div>
+            <h2>Market Sizing: TAM / SAM / SOM</h2>
+            <div class="three-column">
+                <div class="metric-card">
+                    <div class="metric-value">$9.87B</div>
+                    <div class="metric-label"><strong>TAM</strong><br>EU Food Safety Testing 2030<br>6.57% CAGR growth</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">$2.5B</div>
+                    <div class="metric-label"><strong>SAM</strong><br>Global Foreign Body Detection 2033<br>9.5% CAGR growth</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">€35M</div>
+                    <div class="metric-label"><strong>SOM</strong><br>Year 3 Revenue Target<br>1.4% of SAM penetration</div>
+                </div>
+            </div>
+            
+            <div style="margin-top: 3rem;">
+                <h3>Market Breakdown & Regulatory Drivers</h3>
+                <div class="two-column">
+                    <div>
+                        <h4 style="color: var(--accent-gold); margin-bottom: 1rem;">European Market Validation</h4>
+                        <ul class="bullet-list">
+                            <li>23 million foodborne illness cases annually in EU</li>
+                            <li>France: $784M → $1.03B market (2024-2035)</li>
+                            <li>75% French consumers concerned about food safety</li>
+                            <li>EU regulation: detect foreign materials <7mm</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--accent-gold); margin-bottom: 1rem;">Technology & Regulatory Drivers</h4>
+                        <ul class="bullet-list">
+                            <li>EFSA General Food Law Regulation (EC) 178/2002</li>
+                            <li>ANSES 20% increase in regulatory actions</li>
+                            <li>Advanced X-ray multi-energy spectroscopic analysis</li>
+                            <li>Real-time 3D inspection capabilities required</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                Market Validation: Foreign body detection growing 9.5% CAGR (faster than overall food safety at 6.57%) - confirming FlexXray's specialized focus addresses the highest-growth segment
+            </div>
+        </section>
+
+        <!-- Slide 5: Go-To-Market Strategy -->
+        <section class="slide">
+            <div class="slide-number">5/12</div>
+            <h2>Gatekeeper GTM Strategy</h2>
+            <div class="two-column">
+                <div>
+                    <h3>Phase 1: Foundation (June-Dec 2025)</h3>
+                    <ul class="bullet-list">
+                        <li>€347K pipeline conversion focus</li>
+                        <li>Vincent Jaud relationship activation</li>
+                        <li>Beaujolais center fully operational</li>
+                        <li>Rungis market presence established</li>
+                        <li>Break-even: Month 8-10</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Phase 2: Scale (2026)</h3>
+                    <ul class="bullet-list">
+                        <li>E.Leclerc supplier access achieved</li>
+                        <li>CRM pipeline expansion to €2M+</li>
+                        <li>Rungis market dominance</li>
+                        <li>Geographic expansion initiated</li>
+                        <li>€8-12M ARR targeted</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="highlight-box">
+                Strategic Advantage: Personal access to Vincent Jaud (E.Leclerc SOCAMAINE CEO) combined with operational CRM system containing €347K qualified pipeline
+            </div>
+        </section>
+
+        <!-- Slide 6: The E.Leclerc Win -->
+        <section class="slide">
+            <div class="slide-number">6/12</div>
+            <h2>The Ultimate Prize: E.Leclerc Network</h2>
+            <div class="two-column">
+                <div>
+                    <h3>Vincent Jaud Strategic Access</h3>
+                    <ul class="bullet-list">
+                        <li>SOCAMAINE CEO (€100M+ revenue)</li>
+                        <li>Controls 40+ E.Leclerc stores</li>
+                        <li>Sets supplier standards regionally</li>
+                        <li>Personal relationship access point</li>
+                        <li>Industry influence & credibility</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Market Access Opportunity</h3>
+                    <ul class="bullet-list">
+                        <li>720+ E.Leclerc stores nationwide</li>
+                        <li>Potential supplier requirement</li>
+                        <li>Rungis supplier opportunity</li>
+                        <li>Competitor adoption trigger</li>
+                        <li>€50M+ market access potential</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="metric-card" style="margin-top: 2rem;">
+                <div class="metric-value">1,000+</div>
+                <div class="metric-label">Potential suppliers accessible through E.Leclerc network</div>
+            </div>
+        </section>
+
+        <!-- Slide 7: P&L Statement -->
+        <section class="slide">
+            <div class="slide-number">7/12</div>
+            <h2>3-Year P&L Projections</h2>
+            <table class="financials-table">
+                <thead>
+                    <tr>
+                        <th style="text-align: left;">Revenue Streams</th>
+                        <th>Year 1</th>
+                        <th>Year 2</th>
+                        <th>Year 3</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Lafayette Certificate (€800 each)</strong></td>
+                        <td>€480K</td>
+                        <td>€4.8M</td>
+                        <td>€19.2M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Inspection Services</strong></td>
+                        <td>€1.56M</td>
+                        <td>€7.2M</td>
+                        <td>€15.3M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Batch Rescue Services</strong></td>
+                        <td>€100K</td>
+                        <td>€400K</td>
+                        <td>€500K</td>
+                    </tr>
+                    <tr style="background: rgba(245, 158, 11, 0.2); font-weight: bold;">
+                        <td><strong>Total Revenue</strong></td>
+                        <td><strong>€2.14M</strong></td>
+                        <td><strong>€12.4M</strong></td>
+                        <td><strong>€35M</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table class="financials-table" style="margin-top: 2rem;">
+                <thead>
+                    <tr>
+                        <th style="text-align: left;">Operating Expenses</th>
+                        <th>Year 1</th>
+                        <th>Year 2</th>
+                        <th>Year 3</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Lafayette Certificate Development</td>
+                        <td>€50K</td>
+                        <td>€0</td>
+                        <td>€0</td>
+                    </tr>
+                    <tr>
+                        <td>Staff Costs</td>
+                        <td>€465K</td>
+                        <td>€950K</td>
+                        <td>€2.1M</td>
+                    </tr>
+                    <tr>
+                        <td>Facilities & Equipment</td>
+                        <td>€200K</td>
+                        <td>€450K</td>
+                        <td>€1.2M</td>
+                    </tr>
+                    <tr>
+                        <td>Sales & Marketing</td>
+                        <td>€100K</td>
+                        <td>€300K</td>
+                        <td>€600K</td>
+                    </tr>
+                    <tr>
+                        <td>Operations & Other</td>
+                        <td>€270K</td>
+                        <td>€1M</td>
+                        <td>€2.8M</td>
+                    </tr>
+                    <tr style="background: rgba(239, 68, 68, 0.2); font-weight: bold;">
+                        <td><strong>Total OpEx</strong></td>
+                        <td><strong>€1.2M</strong></td>
+                        <td><strong>€2.4M</strong></td>
+                        <td><strong>€6M</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="three-column" style="margin-top: 2rem;">
+                <div class="metric-card">
+                    <div class="metric-value">€900K</div>
+                    <div class="metric-label">Year 1 EBITDA<br>42% margin</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">€9.65M</div>
+                    <div class="metric-label">Year 2 EBITDA<br>78% margin</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">€28.9M</div>
+                    <div class="metric-label">Year 3 EBITDA<br>83% margin</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 8: Unit Economics -->
+        <section class="slide">
+            <div class="slide-number">9/12</div>
+            <h2>Unit Economics & Key Metrics</h2>
+            <div class="two-column">
+                <div>
+                    <h3>Lafayette Certificate Economics</h3>
+                    <div class="metric-card">
+                        <div class="metric-value">€800</div>
+                        <div class="metric-label">Revenue per Certificate</div>
+                    </div>
+                    <ul class="bullet-list">
+                        <li>Direct costs: €80 (10% margin)</li>
+                        <li>€50K one-time development cost</li>
+                        <li>High volume recurring model</li>
+                        <li>Cross-sell to inspection services</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Customer Metrics</h3>
+                    <table class="financials-table">
+                        <thead>
+                            <tr>
+                                <th>Metric</th>
+                                <th>Year 1</th>
+                                <th>Year 2</th>
+                                <th>Year 3</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Active Suppliers</td>
+                                <td>50</td>
+                                <td>300</td>
+                                <td>800</td>
+                            </tr>
+                            <tr>
+                                <td>ARPU (Monthly)</td>
+                                <td>€3,500</td>
+                                <td>€4,200</td>
+                                <td>€5,000</td>
+                            </tr>
+                            <tr>
+                                <td>Churn Rate</td>
+                                <td>5%</td>
+                                <td>3%</td>
+                                <td>2%</td>
+                            </tr>
+                            <tr>
+                                <td>LTV:CAC</td>
+                                <td>12:1</td>
+                                <td>25:1</td>
+                                <td>36:1</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="highlight-box">
+                Lafayette Certificates: 600 in Year 1 → 6,000 in Year 2 → 24,000 in Year 3<br>
+                95%+ Recurring Revenue Model with Strong Network Effects
+            </div>
+        </section>
+
+        <!-- Slide 9: Competitive Landscape -->
+        <section class="slide">
+            <div class="slide-number">8/12</div>
+            <h2>Competitive Moat & Differentiation</h2>
+            <div class="competitive-grid">
+                <div class="competitive-cell competitive-header">Feature</div>
+                <div class="competitive-cell competitive-header">FlexXray</div>
+                <div class="competitive-cell competitive-header">Traditional Labs</div>
+                <div class="competitive-cell competitive-header">Metal Detectors</div>
+                
+                <div class="competitive-cell">Real-time Processing</div>
+                <div class="competitive-cell"><span class="check-mark">✓</span></div>
+                <div class="competitive-cell"><span class="x-mark">✗</span></div>
+                <div class="competitive-cell"><span class="x-mark">✗</span></div>
+                
+                <div class="competitive-cell">99.9% Detection Rate</div>
+                <div class="competitive-cell"><span class="check-mark">✓</span></div>
+                <div class="competitive-cell"><span class="x-mark">✗</span></div>
+                <div class="competitive-cell"><span class="x-mark">✗</span></div>
+                
+                <div class="competitive-cell">Lafayette Certificate™</div>
+                <div class="competitive-cell"><span class="check-mark">✓</span></div>
+                <div class="competitive-cell"><span class="x-mark">✗</span></div>
+                <div class="competitive-cell"><span class="x-mark">✗</span></div>
+                
+                <div class="competitive-cell">Supply Chain Integration</div>
+                <div class="competitive-cell"><span class="check-mark">✓</span></div>
+                <div class="competitive-cell"><span class="x-mark">✗</span></div>
+                <div class="competitive-cell"><span class="x-mark">✗</span></div>
+                
+                <div class="competitive-cell">Retail Requirement Model</div>
+                <div class="competitive-cell"><span class="check-mark">✓</span></div>
+                <div class="competitive-cell"><span class="x-mark">✗</span></div>
+                <div class="competitive-cell"><span class="x-mark">✗</span></div>
+            </div>
+            <div class="highlight-box">
+                10+ Years US Market Leadership • 200+ Patents • Zero Serious Competitors in Real-time X-ray Verification
+            </div>
+        </section>
+
+        <!-- Slide 10: Business Model -->
+        <section class="slide">
+            <div class="slide-number">10/12</div>
+            <h2>Recurring Revenue Model</h2>
+            <div class="three-column">
+                <div class="metric-card">
+                    <h3 style="color: var(--accent-gold); margin-bottom: 1rem;">Lafayette Certification</h3>
+                    <div class="metric-value">€800</div>
+                    <div class="metric-label">Per certificate<br>High volume model<br>24,000 certs by Year 3</div>
+                </div>
+                <div class="metric-card">
+                    <h3 style="color: var(--accent-gold); margin-bottom: 1rem;">Inspection Services</h3>
+                    <div class="metric-value">€2K-8K</div>
+                    <div class="metric-label">Per batch inspection<br>Crisis response<br>Preventive scanning</div>
+                </div>
+                <div class="metric-card">
+                    <h3 style="color: var(--accent-gold); margin-bottom: 1rem;">Batch Rescue</h3>
+                    <div class="metric-value">€5K-15K</div>
+                    <div class="metric-label">Emergency response<br>24-hour turnaround<br>Premium pricing</div>
+                </div>
+            </div>
+            <div style="margin-top: 3rem;">
+                <h3>Two-Site Revenue Strategy</h3>
+                <div class="two-column">
+                    <div>
+                        <h4 style="color: var(--accent-gold); margin-bottom: 1rem;">Beaujolais Center</h4>
+                        <ul class="bullet-list">
+                            <li><strong>Regional Focus:</strong> E.Leclerc supplier network</li>
+                            <li><strong>Vincent Jaud Access:</strong> 40+ store influence</li>
+                            <li><strong>Year 1 Target:</strong> €2.14M revenue</li>
+                            <li><strong>Service Mix:</strong> Inspection + Lafayette Cert</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--accent-gold); margin-bottom: 1rem;">Rungis Hub (Feb 2026)</h4>
+                        <ul class="bullet-list">
+                            <li><strong>Scale Operations:</strong> 1,200+ suppliers</li>
+                            <li><strong>Export Gateway:</strong> Transatlantic certification</li>
+                            <li><strong>Year 2+ Target:</strong> €10M+ additional revenue</li>
+                            <li><strong>Volume Center:</strong> Lafayette Certificate production</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 11: Implementation Timeline -->
+        <section class="slide">
+            <div class="slide-number">11/12</div>
+            <h2>Site Expansion & Execution Roadmap</h2>
+            
+            <div style="margin-bottom: 3rem;">
+                <h3>Facility Timeline & Revenue Impact</h3>
+                <div class="two-column">
+                    <div>
+                        <div style="background: rgba(16, 185, 129, 0.2); padding: 1.5rem; border-radius: 8px; margin-bottom: 1rem;">
+                            <h4 style="color: var(--success-green);">Beaujolais Center (Operational June 2025)</h4>
+                            <ul class="bullet-list" style="font-size: 1rem;">
+                                <li>Primary facility already secured</li>
+                                <li>Year 1: €2.14M revenue target</li>
+                                <li>Vincent Jaud relationship activation</li>
+                                <li>Regional E.Leclerc supplier access</li>
+                                <li>Base for national expansion</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <div style="background: rgba(245, 158, 11, 0.2); padding: 1.5rem; border-radius: 8px; margin-bottom: 1rem;">
+                            <h4 style="color: var(--accent-gold);">Rungis Market Hub (Feb 2026)</h4>
+                            <ul class="bullet-list" style="font-size: 1rem;">
+                                <li>Gateway to 1,200+ European suppliers</li>
+                                <li>€9B market access point</li>
+                                <li>Year 2: Scale to €12.4M revenue</li>
+                                <li>Lafayette Certificate volume center</li>
+                                <li>Export certification hub</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-number">Q2</div>
+                    <h3>Beaujolais Launch</h3>
+                    <ul class="bullet-list" style="font-size: 1rem;">
+                        <li>€347K pipeline conversion</li>
+                        <li>Vincent Jaud pilot program</li>
+                        <li>Regional market entry</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-number">Q4</div>
+                    <h3>Scale Phase</h3>
+                    <ul class="bullet-list" style="font-size: 1rem;">
+                        <li>E.Leclerc supplier requirements</li>
+                        <li>Lafayette Certificate launch</li>
+                        <li>Rungis site preparation</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-number">Q1</div>
+                    <h3>Rungis Opening</h3>
+                    <ul class="bullet-list" style="font-size: 1rem;">
+                        <li>€2.14M revenue from Beaujolais</li>
+                        <li>Rungis operations commence</li>
+                        <li>1,200+ suppliers onboarded</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-number">Q4</div>
+                    <h3>Market Leadership</h3>
+                    <ul class="bullet-list" style="font-size: 1rem;">
+                        <li>€35M annual run rate</li>
+                        <li>Multi-site operations</li>
+                        <li>Geographic expansion</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="highlight-box">
+                Two-Site Strategy: Beaujolais (E.Leclerc regional access) + Rungis (European gateway) = Comprehensive market coverage by 2026
+            </div>
+        </section>
+
+        <!-- Slide 12: Investment & Returns -->
+        <section class="slide">
+            <div class="slide-number">12/12</div>
+            <h2>Investment Opportunity</h2>
+            <div class="two-column">
+                <div>
+                    <h3>Funding Requirements</h3>
+                    <div class="metric-card">
+                        <div class="metric-value">€1.4M</div>
+                        <div class="metric-label">Investment Ask</div>
+                    </div>
+                    <ul class="bullet-list">
+                        <li>€50K: Lafayette Certificate development</li>
+                        <li>€500K: Working capital & operations</li>
+                        <li>€650K: Rungis facility, equipment & setup</li>
+                        <li>€200K: Marketing & sales expansion</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Projected Returns</h3>
+                    <div class="metric-card">
+                        <div class="metric-value">35.6x</div>
+                        <div class="metric-label">Expected ROI</div>
+                    </div>
+                    <ul class="bullet-list">
+                        <li>€35M ARR by Year 3</li>
+                        <li>40%+ EBITDA margins</li>
+                        <li>Market leadership position</li>
+                        <li>Strategic acquisition target</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="opportunity-item">
+                <strong>Unique Opportunity:</strong> First-mover advantage in €50B European food safety market with proprietary technology and strategic retail partnerships
+            </div>
+        </section>
+
+        <!-- Slide 13: Team & Execution -->
+        <section class="slide">
+            <div class="slide-number">13/14</div>
+            <h2>Team & Execution Readiness</h2>
+            
+            <div class="two-column">
+                <div>
+                    <h3>Leadership Team</h3>
+                    <div style="background: rgba(16, 185, 129, 0.2); padding: 1.5rem; border-radius: 8px; margin-bottom: 1rem;">
+                        <h4 style="color: var(--success-green);">General Manager</h4>
+                        <ul class="bullet-list" style="font-size: 1rem;">
+                            <li>€30M+ revenue track record in France</li>
+                            <li>Direct access to Vincent Jaud (SOCAMAINE CEO)</li>
+                            <li>10+ years food industry experience</li>
+                            <li>Bilingual English/French operations</li>
+                            <li>Proven regulatory compliance expertise</li>
+                        </ul>
+                    </div>
+                    
+                    <div style="background: rgba(245, 158, 11, 0.2); padding: 1.5rem; border-radius: 8px;">
+                        <h4 style="color: var(--accent-gold);">Core Team</h4>
+                        <ul class="bullet-list" style="font-size: 1rem;">
+                            <li><strong>Sales Rep:</strong> B2B food safety specialist</li>
+                            <li><strong>Office Manager:</strong> French admin & compliance</li>
+                            <li><strong>Lab Technician:</strong> ASN radiation safety certified</li>
+                            <li><strong>Operations Lead:</strong> Supply chain & logistics</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3>Operational Infrastructure</h3>
+                    <div style="background: rgba(255, 255, 255, 0.1); padding: 1.5rem; border-radius: 8px; margin-bottom: 1rem;">
+                        <h4 style="color: var(--accent-gold);">Systems Already Deployed</h4>
+                        <ul class="bullet-list" style="font-size: 1rem;">
+                            <li>Enterprise CRM with €347K active pipeline</li>
+                            <li>Lafayette Certificate™ processing system</li>
+                            <li>Quality management & documentation</li>
+                            <li>Financial reporting & analytics platform</li>
+                            <li>Customer portal & certification tracking</li>
+                        </ul>
+                    </div>
+                    
+                    <div style="background: rgba(255, 255, 255, 0.1); padding: 1.5rem; border-radius: 8px;">
+                        <h4 style="color: var(--accent-gold);">Regulatory Readiness</h4>
+                        <ul class="bullet-list" style="font-size: 1rem;">
+                            <li>ASN licensing process mapped (9-week timeline)</li>
+                            <li>HACCP protocols & food safety certification</li>
+                            <li>French legal entity structure planned</li>
+                            <li>Rungis facility requirements documented</li>
+                            <li>Insurance & compliance frameworks ready</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <h3>Strategic Advantages & Risk Mitigation</h3>
+            <div class="three-column">
+                <div class="metric-card">
+                    <h4 style="color: var(--accent-gold); margin-bottom: 1rem;">Proven Technology</h4>
+                    <ul class="bullet-list" style="font-size: 0.9rem;">
+                        <li>10+ years US market validation</li>
+                        <li>99.9% detection accuracy</li>
+                        <li>200+ patents & IP protection</li>
+                        <li>Zero serious competitors in real-time X-ray</li>
+                    </ul>
+                </div>
+                <div class="metric-card">
+                    <h4 style="color: var(--accent-gold); margin-bottom: 1rem;">Market Access</h4>
+                    <ul class="bullet-list" style="font-size: 0.9rem;">
+                        <li>Vincent Jaud personal relationship</li>
+                        <li>€347K qualified pipeline ready</li>
+                        <li>Beaujolais facility secured</li>
+                        <li>Rungis strategy validated</li>
+                    </ul>
+                </div>
+                <div class="metric-card">
+                    <h4 style="color: var(--accent-gold); margin-bottom: 1rem;">Execution Plan</h4>
+                    <ul class="bullet-list" style="font-size: 0.9rem;">
+                        <li>June 2025: Beaujolais operational</li>
+                        <li>Feb 2026: Rungis launch</li>
+                        <li>9-week regulatory timeline</li>
+                        <li>€1.4M investment fully allocated</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="highlight-box">
+                <strong>Execution Confidence:</strong> Unlike typical startups, FlexXray France launches with proven technology, qualified pipeline, strategic relationships, operational systems, and detailed regulatory roadmap - significantly reducing execution risk
+            </div>
+        </section>
+
+        <!-- Slide 14: Next Steps -->
+        <section class="slide">
+            <div class="slide-number">14/14</div>
+            <h2>Ready to Execute</h2>
+            <div class="two-column">
+                <div>
+                    <h3>Immediate Actions</h3>
+                    <ul class="bullet-list">
+                        <li>€347K pipeline active in CRM</li>
+                        <li>Vincent Jaud engagement initiated</li>
+                        <li>Beaujolais operations ready</li>
+                        <li>Technical systems deployed</li>
+                        <li>June 2025 launch confirmed</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>90-Day Milestones</h3>
+                    <ul class="bullet-list">
+                        <li>Convert €150K+ from existing pipeline</li>
+                        <li>SOCAMAINE pilot proposal delivered</li>
+                        <li>Rungis partnerships initiated</li>
+                        <li>Pipeline expansion to €500K+</li>
+                        <li>Series A preparation complete</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="highlight-box" style="margin: 3rem 0;">
+                Market Timing Perfect: Food safety crisis + regulatory pressure + proven technology + strategic relationships = Exceptional opportunity
+            </div>
+            <button class="cta-button">Let's Transform European Food Safety Together</button>
+        </section>
+
+    </div>
+
+    <!-- Navigation buttons -->
+    <div class="nav-buttons">
+        <button class="nav-btn" onclick="previousSlide()" id="prevBtn">Previous</button>
+        <button class="nav-btn" onclick="nextSlide()" id="nextBtn">Next</button>
+        <span style="background: rgba(255,255,255,0.1); padding: 10px 15px; border-radius: 5px; margin-left: 10px;" id="slideCounter">1/14</span>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        function showSlide(n) {
+            if (n >= totalSlides) currentSlide = 0;
+            if (n < 0) currentSlide = totalSlides - 1;
+            
+            // Scroll to the current slide
+            slides[currentSlide].scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
+            });
+            
+            // Update navigation buttons
+            document.getElementById('prevBtn').disabled = currentSlide === 0;
+            document.getElementById('nextBtn').disabled = currentSlide === totalSlides - 1;
+            
+            // Update slide counter
+            document.getElementById('slideCounter').textContent = `${currentSlide + 1}/${totalSlides}`;
+        }
+
+        function nextSlide() {
+            if (currentSlide < totalSlides - 1) {
+                currentSlide++;
+                showSlide(currentSlide);
+            }
+        }
+
+        function previousSlide() {
+            if (currentSlide > 0) {
+                currentSlide--;
+                showSlide(currentSlide);
+            }
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                e.preventDefault();
+                nextSlide();
+            } else if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                previousSlide();
+            }
+        });
+
+        // Initialize
+        showSlide(0);
+
+        // Update current slide based on scroll position
+        function updateCurrentSlideOnScroll() {
+            const scrollPosition = window.scrollY;
+            const windowHeight = window.innerHeight;
+            const newSlide = Math.round(scrollPosition / windowHeight);
+            
+            if (newSlide !== currentSlide && newSlide >= 0 && newSlide < totalSlides) {
+                currentSlide = newSlide;
+                document.getElementById('slideCounter').textContent = `${currentSlide + 1}/${totalSlides}`;
+                document.getElementById('prevBtn').disabled = currentSlide === 0;
+                document.getElementById('nextBtn').disabled = currentSlide === totalSlides - 1;
+            }
+        }
+
+        // Throttled scroll listener
+        let scrollTimeout;
+        window.addEventListener('scroll', function() {
+            if (scrollTimeout) {
+                clearTimeout(scrollTimeout);
+            }
+            scrollTimeout = setTimeout(updateCurrentSlideOnScroll, 100);
+        });
+
+        // Smooth scrolling for better presentation
+        document.documentElement.style.scrollBehavior = 'smooth';
+    </script>
+</body>
+</html>
